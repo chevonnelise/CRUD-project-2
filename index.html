@@ -15,28 +15,50 @@
 </head>
 
 <body>
+    <!-- Modal -->
     <div class="container mt-5">
-        <h1 class="text-center">To Do List</h1>      
-      <div class="mb-3">
-        <!-- <form id="todo-form"> -->
-	        <input type="text" id="taskName" class="form-control" placeholder="Task Name">
-	        </div>
-	        <div class="mb-3">
-	            <select id="taskUrgency" class="form-control">
-	                <option value="low">Low</option>
-	                <option value="medium">Medium</option>
-	                <option value="high">High</option>
-	            </select>
-	        </div>
-            <button id="addTodo" class="btn btn-primary mb-3">Add Todo</button>
-	        <!-- <input type="submit" id="addTodo" class="btn btn-primary mb-3" value="Add To Do"/> -->
-	      <!-- </form> -->
-        
-      
-        <ul id="todoList" class="list-group">
-            <!-- Todo items will be appended here -->
-        </ul>
-        <button id="save-btn" class="btn btn-success mt-3">Save</button>
+        <h1 class="text-center">To Do List</h1>
+        <!-- <button id="addTodo" class="btn btn-primary mb-3">Add Todo</button> -->
+        <!-- Button trigger modal -->
+        <button id="addTodo" type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Add Song
+        </button>
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Which song was played?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="mb-3">
+                            <!-- <form id="todo-form"> -->
+                            <input type="text" id="taskName" class="form-control" placeholder="Task Name">
+                        </div>
+                        <div class="mb-3">
+                            <select id="taskUrgency" class="form-control">
+                                <option value="surprise">Surprise</option>
+                                <option value="fixed">Fixed</option>
+                                <option value="Unplayed">Unplayed</option>
+                            </select>
+                        </div>
+                        <ul id="todoList" class="list-group">
+                            <!-- Todo items will be appended here -->
+                        </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+                        <button id="save-btn" type="button" class="btn btn-success mt-3">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <input type="submit" id="addTodo" class="btn btn-primary mb-3" value="Add To Do"/> -->
+        <!-- </form> -->
     </div>
 
 
@@ -48,7 +70,9 @@
         crossorigin="anonymous"></script>
 
     <!-- Axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Own Javascript -->
     <script src="data.js"></script>
